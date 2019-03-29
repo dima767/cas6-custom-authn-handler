@@ -23,7 +23,6 @@ import org.springframework.context.annotation.DependsOn;
 import static org.apereo.cas.CipherExecutor.LOGGER;
 
 @Configuration
-@EnableConfigurationProperties(CasConfigurationProperties.class)
 public class CustomAuthenticationHandlerConfiguration {
 
     @Autowired
