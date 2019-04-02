@@ -1,9 +1,7 @@
 package org.example.dk.cas.authn;
 
-import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
-import org.apereo.cas.authentication.AcceptUsersAuthenticationHandler;
 import org.apereo.cas.authentication.AuthenticationHandler;
 import org.apereo.cas.authentication.AuthenticationHandlerExecutionResult;
 import org.apereo.cas.authentication.PreventedException;

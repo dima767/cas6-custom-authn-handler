@@ -20,14 +20,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 
-import static org.apereo.cas.CipherExecutor.LOGGER;
-
 @Configuration
 public class CustomAuthenticationHandlerConfiguration {
 
     @Autowired
     @Qualifier("defaultPrincipalResolver")
-    private ObjectProvider<PrincipalResolver> defaultPrincipalResolver;
+    private PrincipalResolver defaultPrincipalResolver;
 
     @Autowired
     @Qualifier("acceptUsersAuthenticationHandler")
@@ -41,7 +39,7 @@ public class CustomAuthenticationHandlerConfiguration {
     @Bean
     public AuthenticationEventExecutionPlanConfigurer acceptUsersAuthenticationEventExecutionPlanConfigurer() {
         return plan -> {
-            plan.registerAuthenticationHandlerWithPrincipalResolver(customAcceptUsersAuthenticationHandler(), defaultPrincipalResolver.getIfAvailable());
+            plan.registerAuthenticationHandlerWithPrincipalResolver(customAcceptUsersAuthenticationHandler(), defaultPrincipalResolver);
         };
     }
 }
